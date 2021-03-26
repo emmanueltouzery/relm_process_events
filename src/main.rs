@@ -18,6 +18,7 @@ impl Widget for Win {
         self.widgets
             .tv
             .connect_row_activated(move |_tv, sort_path, _col| {
+                println!("emitting relm event");
                 r.stream().emit(Msg::RowClicked);
             });
 
